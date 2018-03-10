@@ -89,7 +89,19 @@ dotnet aspnet-codegenerator controller -name GentController -outDir Controllers 
 
 Següent pas, fer la Api. Afegir el [controlador de la API](./Controllers/ApiGentController.cs)
 
-Ara anem a [instal·lar select2](https://select2.org/getting-started/installation), ho posem a les [dependències de client (bower.json)](./bower.json) i executem ```dotnet restore```
+Ara anem a [instal·lar select2](https://select2.org/getting-started/installation), ho posem a les [dependències de client (bower.json)](./bower.json) i executem ```dotnet restore```. Comprovem
+que les dependències de client no s'actualitzen soles. Posem select2 mitjançant CDN de cloudflare.
+Cal anar amb compte perquè hi ha dos entorns (include/exclude="Development") i cal posar-lo a tots dos.
+
+Ara només falta crear la API per tal de fer servir [select2 amb ajax](https://select2.org/data-sources/ajax).
+
+
+
+
+
+
+
+
 
 
 

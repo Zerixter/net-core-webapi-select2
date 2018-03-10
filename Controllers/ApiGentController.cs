@@ -21,7 +21,27 @@ namespace TodoApi.Controllers
             return _context.Gent.ToList();
         }
 
-        [HttpGet("{id}", Name = "GetPersona")]
+        [HttpGet("search")]
+        [HttpGet("search/{term}", Name = "SearchPersona")]
+        public IActionResult SearchByTerm(string term = "", int page = 0)
+        {
+            var consulta = _context
+                            .Gent
+                            .Where( x=> (x.Nom + " " + x.Cognoms).Contains(term) )
+                            .OrderBy( x=> x.Nom )
+                            .ThenBy(x=>x.Cognoms)
+                            .Select( x=> new {id = x.Id, text = $"{x.Nom} {x.Cognoms}" } )
+                            ;
+            var items = consulta
+                        .Skip( page * 10 )
+                        .Take(10)
+                        .ToList();
+            var pagination_object = new {more = consulta.Count() > page * 10 };
+            var result = new { results = items, pagination = pagination_object };
+            return new ObjectResult(result);
+        }
+
+        [HttpGet("{id:long}", Name = "GetPersona")]
         public IActionResult GetById(long id)
         {
             var item = _context.Gent.FirstOrDefault(t => t.Id == id);

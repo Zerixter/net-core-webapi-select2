@@ -9,11 +9,7 @@
 <form method="post">
 
     <div>
-        <select name="selecciona-persona" id="SeleccionaPersona">
-            @foreach (var item1 in Model.Tothom)
-            {
-                <option value="@item1.Id">@item1.Nom @item1.Cognoms</option>
-            }
+        <select name="selecciona-persona" id="SeleccionaPersona" class="col-lg-3">
         </select>
     </div>
 </form>
@@ -23,7 +19,14 @@
 @section Scripts {
     <script>
         $(document).ready(function () {
-             $('#SeleccionaPersona').select2();
+            $('#SeleccionaPersona').select2({
+                dataType: 'json',
+                ajax: {
+                    url: function (params) {
+                        return '/api/ApiGent/search/' + params.term;
+                    }
+                }
+            });
        });
   </script>
 }
