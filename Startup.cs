@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using net_core_webapi_select2.Models;
 
 namespace net_core_webapi_select2
 {
@@ -22,6 +24,9 @@ namespace net_core_webapi_select2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddDbContext<MyContext>(options => 
+                options.UseSqlite("Data Source=base_de_dades_de_persones.db") 
+            );            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
