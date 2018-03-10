@@ -16,6 +16,14 @@ Artícles interessants:
 >A Razor Page is very similar to the view component that ASP.NET MVC developers are used to. It has all the same syntax and functionality.
 >The key difference is that the model and controller code is also included within the Razor Page itself. It is more an MVVM (Model-View-ViewModel) framework. It enables two-way data binding and a simpler development experience with isolated concerns.
 
+###[Create a Web API with ASP.NET Core MVC and Visual Studio Code on Linux, macOS, and Windows](https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-vsc)
+
+>In this tutorial, build a web API for managing a list of "to-do" items. A UI isn't constructed.
+
+###[ASP.NET Core Web API help pages using Swagger / Open API](https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger)
+
+>When consuming a Web API, understanding its various methods can be challenging for a developer. Swagger, also known as Open API, solves the problem of generating useful documentation and help pages for Web APIs. It provides benefits such as interactive documentation, client SDK generation, and API discoverability.
+
 ###Passes de la pràctica
 
 Fem l'aplicació com a MVC razor:
@@ -78,3 +86,5 @@ Deixem que l'scaffolding ens crei el controller:
 ```
 dotnet aspnet-codegenerator controller -name GentController -outDir Controllers -m Persona -dc MyContext
 ```
+
+Següent pas, fer la Api. Afegir el [controlador de la API](./Controllers/ApiGentController.cs)
