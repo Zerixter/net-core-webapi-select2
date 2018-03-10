@@ -11,6 +11,11 @@ Artícles interessants:
 
 >One of the things that I really like in rails is tha hability to generate files using the scaffolding through the CLI, and recently I've started to learn ASP.Net Core.
 
+###[ASP.NET Razor Pages vs MVC: How Do Razor Pages Fit in Your Toolbox?](https://stackify.com/asp-net-razor-pages-vs-mvc/)
+
+>A Razor Page is very similar to the view component that ASP.NET MVC developers are used to. It has all the same syntax and functionality.
+>The key difference is that the model and controller code is also included within the Razor Page itself. It is more an MVVM (Model-View-ViewModel) framework. It enables two-way data binding and a simpler development experience with isolated concerns.
+
 ###Passes de la pràctica
 
 Fem l'aplicació com a MVC razor:
@@ -68,3 +73,8 @@ dotnet ef database update
 
 [Fem la pàgina Razor que ens crearà les persones](./Pages/AddRandomPeople.cshtml.cs). Amb Core el context el rebrem per paràmetre perquè així ho hem configurat a l' [Startup.cs](./Startup.cs)
 
+Deixem que l'scaffolding ens crei el controller:
+
+```
+dotnet aspnet-codegenerator controller -name GentController -outDir Controllers -m Persona -dc MyContext
+```
