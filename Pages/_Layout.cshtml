@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - net_core_webapi_select2</title>
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
@@ -35,6 +38,7 @@
                     <li><a asp-page="/Contact">Contact</a></li>
                     <li><a asp-page="/AddRandomPeople">Afegir moltes persones</a></li>
                     <li><a asp-area="" asp-controller="Gent" asp-action="Index">EO</a></li>
+                    <li><a asp-page="/SelectPeople">Selecciona persona</a></li>
                 </ul>
             </div>
         </div>

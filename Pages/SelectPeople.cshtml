@@ -1,0 +1,21 @@
+@page
+@model SelectPeopleModel
+@{
+    ViewData["Title"] = "About";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@Model.Message</h3>
+
+<form method="post">
+
+    <div>
+        <select name="selecciona-persona" id="Selecciona Persona">
+            @foreach (var item1 in Model.Tothom)
+            {
+                <option value="@item1.Id">@item1.Nom @item1.Cognoms</option>
+            }
+        </select>
+    </div>
+</form>
+
+<p>Use this area to provide additional information.</p>
