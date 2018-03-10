@@ -35,3 +35,16 @@ Amb compte amb el fitxer del projecte, després d'afegir els paquets s'ha de fix
   </ItemGroup>
 </Project>
 ```
+
+Crear model i dbcontext.
+
+Afegir paquest sqlite i entity framework:
+
+```
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+dotnet add package Microsoft.EntityFrameworkCore.Tools.DotNet
+```
+
+Ull! les Tools d'EF són un ```DotNetCliToolReference```.
+
+
