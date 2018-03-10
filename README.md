@@ -36,7 +36,7 @@ Amb compte amb el fitxer del projecte, després d'afegir els paquets s'ha de fix
 </Project>
 ```
 
-Crear model i dbcontext.
+Crear [model](./Models/Persona.cs) i [dbcontext](./Models/MyContext.cs).
 
 Afegir paquest sqlite i entity framework:
 
@@ -47,4 +47,10 @@ dotnet add package Microsoft.EntityFrameworkCore.Tools.DotNet
 
 Ull! les Tools d'EF són un ```DotNetCliToolReference```.
 
+Cal fer les migracions:
 
+```
+dotnet build
+dotnet ef migrations add "Migracio Inicial"
+dotnet ef database update
+```
