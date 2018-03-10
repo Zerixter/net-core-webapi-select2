@@ -30,7 +30,7 @@ namespace TodoApi.Controllers
                             .Where( x=> (x.Nom + " " + x.Cognoms).Contains(term) )
                             .OrderBy( x=> x.Nom )
                             .ThenBy(x=>x.Cognoms)
-                            .Select( x=> new {id = x.Id, text = $"{x.Nom} {x.Cognoms}" } )
+                            .Select( x=> new {id = x.Id, text = $"{x.Nom} {x.Cognoms} ({x.Id})" } )
                             ;
             var items = consulta
                         .Skip( page * 10 )

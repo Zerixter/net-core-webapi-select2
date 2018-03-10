@@ -11,17 +11,11 @@ namespace net_core_webapi_select2.Pages
     {
         private readonly MyContext _context;
 
-        public SelectPeopleModel(MyContext context)
-        {
-            _context = context;
-        }   
         public string Message { get; set; }
-        public List<Persona> Tothom {get; set;}
 
         public void OnGet()
         {
-            Tothom = _context.Gent.ToList();
-            Message = "Primera prova on surt tothom";
+            Message = "Llista infinita";
         }
     }
 }

@@ -95,7 +95,13 @@ Cal anar amb compte perquè hi ha dos entorns (include/exclude="Development") i 
 
 Ara només falta crear la API per tal de fer servir [select2 amb ajax](https://select2.org/data-sources/ajax).
 
+Es fa d'aquesta manera:
 
+!(client)[./wwwroot/images/js_client.png]
+
+!(server)[./wwwroot/images/api_server.png]
+
+!(demo)[./wwwroot/images/demo_select2_dotnet_core.gif]
 
 
 
