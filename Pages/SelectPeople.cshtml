@@ -9,7 +9,7 @@
 <form method="post">
 
     <div>
-        <select name="selecciona-persona" id="Selecciona Persona">
+        <select name="selecciona-persona" id="SeleccionaPersona">
             @foreach (var item1 in Model.Tothom)
             {
                 <option value="@item1.Id">@item1.Nom @item1.Cognoms</option>
@@ -19,3 +19,11 @@
 </form>
 
 <p>Use this area to provide additional information.</p>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+             $('#SeleccionaPersona').select2();
+       });
+  </script>
+}
