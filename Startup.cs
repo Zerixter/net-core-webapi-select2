@@ -25,7 +25,7 @@ namespace net_core_webapi_select2
         {
             services.AddMvc();
             services.AddDbContext<MyContext>(options => 
-                options.UseSqlite("Data Source=base_de_dades_de_persones.db") 
+                options.UseSqlite("Data Source=./dades/base_de_dades_de_persones.db") 
             );            
         }
 
