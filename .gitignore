@@ -290,3 +290,5 @@ __pycache__/
 #data
 
 dades/*
+!dades/~gitkeep~
+out/*
