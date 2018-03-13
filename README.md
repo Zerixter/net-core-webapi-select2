@@ -87,7 +87,11 @@ Deixem que l'scaffolding ens crei el controller:
 dotnet aspnet-codegenerator controller -name GentController -outDir Controllers -m Persona -dc MyContext
 ```
 
-Següent pas, fer la Api. Afegir el [controlador de la API](./Controllers/ApiGentController.cs)
+Següent pas, fer la Api. Afegir el [controlador de la API](./Controllers/ApiGentController.cs). Generem el controlador amb l'opció `-api`:
+
+```
+dotnet aspnet-codegenerator controller -name ApiGentController -outDir Controllers -m Persona -dc MyContext -api
+```
 
 Ara anem a [instal·lar select2](https://select2.org/getting-started/installation), ho posem a les [dependències de client (bower.json)](./bower.json) i executem ```dotnet restore```. Comprovem
 que les dependències de client no s'actualitzen soles. Posem select2 mitjançant CDN de cloudflare.
