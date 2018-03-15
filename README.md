@@ -1,6 +1,9 @@
 # net-core-webapi-select2
 select2 and net core webapi integration
 
+## [<< Visualitza els vídeos de la pràctica >>](https://uf.ctrl-alt-d.net/material/mostra/449/construccio-duna-webapi-restful-custom-api-amb-select2)
+
+
 Artícles interessants:
 
 ### [Goodbye Web API: Your Guide to RESTful APIs with ASP.NET Core](https://stackify.com/asp-net-core-web-api-guide/)
