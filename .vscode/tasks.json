@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/net-core-webapi-select2.csproj"
+                "${workspaceFolder}/core-classe.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

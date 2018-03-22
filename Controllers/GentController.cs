@@ -6,6 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using core_classe.Models;
+//using Google.Cloud.Language.V1;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
 
 namespace core_classe.Controllers
 {
@@ -94,23 +98,60 @@ namespace core_classe.Controllers
 
             if (ModelState.IsValid)
             {
-                try
+
+                /***aquí***    
+                var client = LanguageServiceClient.Create(  );
+                var response = client.AnalyzeSentiment(new Document()
                 {
-                    _context.Update(persona);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
+                    Content = persona.Perfil,
+                    Type = Document.Types.Type.PlainText
+                });
+                var sentiment = response.DocumentSentiment;
+                */
+
+                string post_uri = @"https://language.googleapis.com/v1beta2/documents:analyzeSentiment";
+                var document = new { document= new {
+                                                content=  persona.Perfil,
+                                                type= "PLAIN_TEXT"
+                                               },
+                                     encodingType= "NONE"
+                                    };
+                var client = new HttpClient
                 {
-                    if (!PersonaExists(persona.Id))
+                    BaseAddress = new Uri(post_uri)
+                };
+
+                var resposta = client.PostAsJsonAsync( "?key=AIzaSyBHRNR69inLnLdyVRwSSlkjJmtZUHLo4xg",
+                                                        document).Result;
+
+                var json_resultant = resposta.Content.ReadAsStringAsync().Result;
+                var objecte_resultant = JsonConvert.DeserializeObject<dynamic>( json_resultant );
+
+
+                if (objecte_resultant.documentSentiment.score<0f) {
+                    ModelState.AddModelError("Perfil","A Google no li agrada el teu profile");
+
+                } else {
+                    try
                     {
-                        return NotFound();
+                        _context.Update(persona);
+                        await _context.SaveChangesAsync();
                     }
-                    else
+                    catch (DbUpdateConcurrencyException)
                     {
-                        throw;
+                        if (!PersonaExists(persona.Id))
+                        {
+                            return NotFound();
+                        }
+                        else
+                        {
+                            throw;
+                        }
                     }
+                    return RedirectToAction(nameof(Index));
                 }
-                return RedirectToAction(nameof(Index));
+
+                
             }
             return View(persona);
         }
