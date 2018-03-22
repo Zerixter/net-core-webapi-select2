@@ -3,9 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - net_core_webapi_select2</title>
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <title>@ViewData["Title"] - core_classe</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -17,6 +15,8 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
+    @RenderSection("ExtraHeader", required: false)
+
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -28,16 +28,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-page="/Index" class="navbar-brand">net_core_webapi_select2</a>
+                <a asp-page="/Index" class="navbar-brand">core_classe</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-page="/Index">Home</a></li>
                     <li><a asp-page="/About">About</a></li>
                     <li><a asp-page="/Contact">Contact</a></li>
-                    <li><a asp-page="/AddRandomPeople">Afegir moltes persones</a></li>
-                    <li><a asp-area="" asp-controller="Gent" asp-action="Index">EO</a></li>
-                    <li><a asp-page="/SelectPeople">Selecciona persona</a></li>
+                    <li><a asp-page="/InsercioDadesProva">Inserció de moltes dades</a></li>
+                    <li><a asp-area="" asp-controller="Gent" asp-action="Index">CRUD Persones</a></li>
+                    <li><a asp-page="/SeleccionaPersona">Selecciona Persona</a></li>
                 </ul>
             </div>
         </div>
@@ -46,7 +46,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2017 - net_core_webapi_select2</p>
+            <p>&copy; 2017 - core_classe</p>
         </footer>
     </div>
 
@@ -54,7 +54,6 @@
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>        
     </environment>
     <environment exclude="Development">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
@@ -69,9 +68,7 @@
                 crossorigin="anonymous"
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
         </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
-
     </environment>
 
     @RenderSection("Scripts", required: false)

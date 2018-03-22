@@ -1,0 +1,38 @@
+@page
+@model SeleccionaPersonaModel
+@{
+    ViewData["Title"] = "Exemple de select:";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@Model.Message</h3>
+
+<form>
+    <select id="la-meva-select" class="col-sm-12">
+        @foreach ( var p in Model.gent ) {
+            <option value="@p.Id"> @p.Nom @p.Cognoms </option> 
+        }
+    </select>
+</form>
+
+<p>:)</p>
+
+@section ExtraHeader {
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />       
+}
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#la-meva-select').select2({
+                                    ajax: {
+                                        dataType: 'json',
+                                        url: function (params) {
+                                            return '/api/GentApi/search/' + params.term ;
+                                        }
+                                    }}
+        );
+    });
+    </script>
+}
+

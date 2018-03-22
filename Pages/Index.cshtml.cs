@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace net_core_webapi_select2.Pages
+namespace core_classe.Pages
 {
     public class IndexModel : PageModel
     {

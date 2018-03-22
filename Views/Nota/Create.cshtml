@@ -1,0 +1,39 @@
+@model core_classe.Models.Nota
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Nota</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Observacions" class="control-label"></label>
+                <input asp-for="Observacions" class="form-control" />
+                <span asp-validation-for="Observacions" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nota" class="control-label"></label>
+                <input asp-for="nota" class="form-control" />
+                <span asp-validation-for="nota" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="persona_fk" class="control-label"></label>
+                <select asp-for="persona_fk" class ="form-control" asp-items="ViewBag.persona_fk"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

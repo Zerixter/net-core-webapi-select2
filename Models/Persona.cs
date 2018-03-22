@@ -1,6 +1,7 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace net_core_webapi_select2.Models
+namespace core_classe.Models
 {
     public class Persona
     {
@@ -15,5 +16,8 @@ namespace net_core_webapi_select2.Models
 
         [DataType(DataType.MultilineText)]
         public string Perfil { get; set; }
+
+        //propietat de navegació
+        public virtual List<Nota> notes {get; set; } = new List<Nota>();
     }
 }

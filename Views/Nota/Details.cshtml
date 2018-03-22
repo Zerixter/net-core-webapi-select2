@@ -1,4 +1,4 @@
-@model core_classe.Models.Persona
+@model core_classe.Models.Nota
 
 @{
     ViewData["Title"] = "Details";
@@ -7,26 +7,26 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Persona</h4>
+    <h4>Nota</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Nom)
+            @Html.DisplayNameFor(model => model.Observacions)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Nom)
+            @Html.DisplayFor(model => model.Observacions)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Cognoms)
+            @Html.DisplayNameFor(model => model.nota)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Cognoms)
+            @Html.DisplayFor(model => model.nota)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Perfil)
+            @Html.DisplayNameFor(model => model.alumne)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Perfil)
+            @Html.DisplayFor(model => model.alumne.Id)
         </dd>
     </dl>
 </div>

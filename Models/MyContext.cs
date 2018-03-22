@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using core_classe.Models;
 
-namespace net_core_webapi_select2.Models 
+namespace core_classe.Models 
 {
 
     public class MyContext : DbContext
@@ -9,6 +10,18 @@ namespace net_core_webapi_select2.Models
         {}
 
         public DbSet<Persona> Gent { get; set; } 
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Nota>()
+                .HasOne(x=>x.alumne)
+                .WithMany(x=>x.notes)
+                .HasForeignKey(x=>x.persona_fk);
+
+        }
+
+        public DbSet<core_classe.Models.Nota> Nota { get; set; }
+
     }
     
 }

@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace netcorewebapiselect2.Migrations
+namespace coreclasse.Migrations
 {
     public partial class MigracioInicial : Migration
     {
